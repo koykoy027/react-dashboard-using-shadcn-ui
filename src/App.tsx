@@ -1,22 +1,16 @@
-import { useState, useEffect } from "react";
-import { fetchStudents } from "./lib/apis/students";
+import { useQuery } from 'react-query';
+import { fetchStudents } from './lib/apis/students';
 
 function App() {
-  const [students, setStudents] = useState([]);
+  const { data, isLoading, isError } = useQuery('students', fetchStudents);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const studentsData = await fetchStudents();
-        setStudents(studentsData);
-      } catch (error) {
-        console.log("Something went wrong", error);
-      }
-    };
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-    fetchData();
-  }, []);
-
+  if (isError) {
+    return <p>Error fetching data</p>;
+  }
   return (
     <div className="container border">
       <h1 className="uppercase font-bold">Fetch apis from laravel localhost</h1>
@@ -33,14 +27,16 @@ function App() {
         </thead>
 
         <tbody>
-          {students.map((data) => (
-            <tr key={data.id} className="hover:bg-gray-50">
-              <td className="py-2 px-4 border-b">{data.id}</td>
-              <td className="py-2 px-4 border-b">{data.name}</td>
-              <td className="py-2 px-4 border-b">{data.email}</td>
-              <td className="py-2 px-4 border-b">{data.gender}</td>
-            </tr>
-          ))}
+        {data.map((student) => (
+          <tr key={student.id} className="hover:bg-gray-50">
+            <td className="py-2 px-4 border-b">{student.id}</td>
+            <td className="py-2 px-4 border-b">{student.name}</td>
+            <td className="py-2 px-4 border-b">{student.email}</td>
+            <td className="py-2 px-4 border-b">{student.gender}</td>
+        </tr>
+        ))}
+
+          
         </tbody>
       </table>
     </div>
