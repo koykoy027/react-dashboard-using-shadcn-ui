@@ -1,29 +1,14 @@
-import { useQuery } from 'react-query';
-import { fetchStudents } from './lib/apis/students';
-import { columns } from "./lib/columns/students"
-import { DataTable } from "./components/data-table"
-import { Skeleton } from "@/components/ui/skeleton"
+import Routes from "./routes/routes"
+import { BrowserRouter as Router } from "react-router-dom";
 
-
-
-function App() {
-  const { data, isLoading, isError } = useQuery('students', fetchStudents);
-
-
-  if (isLoading) {
-    return <><h1>Loading...</h1></>;
-  }
-
-  if (isError) {
-    return <p>Something went wrong {isError}</p>;
-  }
+const App: React.FC = () => {
   return (
-    <div className="container border p-10">      
-      <h1 className="uppercase font-bold mt-10">using Shadcn/ui Datatables</h1>
-      <DataTable columns={columns} data={data} />
-      
-    </div>
+    <>
+      <Router>
+        <Routes />
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
