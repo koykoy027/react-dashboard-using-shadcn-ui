@@ -17,7 +17,7 @@ const Index: React.FC = () => {
 
 
     return (
-        <div className="container border p-10">      
+        <div className="container border p-10 ">      
           <h1 className="uppercase font-bold mt-10">using Shadcn/ui Datatables</h1>
           <DataTable columns={columns} data={data} />
           
