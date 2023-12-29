@@ -13,7 +13,7 @@ const Index: React.FC = () => {
       <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-3">
         <Card>
           <CardHeader>
-            <CardTitle>Total Subscriber</CardTitle>
+            <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
             <CardDescription>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
               veritatis amet deserunt incidunt ducimus mollitia!
@@ -22,13 +22,14 @@ const Index: React.FC = () => {
           <CardContent>
             <h1>Lorem ipsum dolor sit amet.</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut deleniti, illo itaque vero porro omnis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+              deleniti, illo itaque vero porro omnis.
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Total Subscriber</CardTitle>
+            <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
             <CardDescription>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
               veritatis amet deserunt incidunt ducimus mollitia!
@@ -37,13 +38,14 @@ const Index: React.FC = () => {
           <CardContent>
             <h1>Lorem ipsum dolor sit amet.</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut deleniti, illo itaque vero porro omnis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+              deleniti, illo itaque vero porro omnis.
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Total Subscriber</CardTitle>
+            <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
             <CardDescription>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
               veritatis amet deserunt incidunt ducimus mollitia!
@@ -52,13 +54,14 @@ const Index: React.FC = () => {
           <CardContent>
             <h1>Lorem ipsum dolor sit amet.</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut deleniti, illo itaque vero porro omnis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+              deleniti, illo itaque vero porro omnis.
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Total Subscriber</CardTitle>
+            <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
             <CardDescription>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
               veritatis amet deserunt incidunt ducimus mollitia!
@@ -67,7 +70,8 @@ const Index: React.FC = () => {
           <CardContent>
             <h1>Lorem ipsum dolor sit amet.</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut deleniti, illo itaque vero porro omnis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+              deleniti, illo itaque vero porro omnis.
             </p>
           </CardContent>
         </Card>
