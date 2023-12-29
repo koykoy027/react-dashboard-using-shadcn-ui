@@ -189,8 +189,8 @@ const NavBar: React.FC = () => {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="px-12 text-sm font-medium leading-none">
-        {/* <Breadcrumbs /> */}
+      <div className="px-12 text-sm font-medium leading-none mt-4">
+        <Breadcrumbs />
       </div>
     </Card>
   );

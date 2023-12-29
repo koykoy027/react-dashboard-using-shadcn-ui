@@ -10,7 +10,7 @@ import {
 const Index: React.FC = () => {
   return (
     <>
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-3">
         <Card>
           <CardHeader>
             <CardTitle>Total Subscriber</CardTitle>
