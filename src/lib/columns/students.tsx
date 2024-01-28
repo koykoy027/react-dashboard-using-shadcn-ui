@@ -7,7 +7,7 @@ import { Button } from "../../components/ui/button";
 export type Payment = {
   id: string;
   name: string;
-  amount: number;
+  // amount: number;
   gender: "Male" | "Female";
   email: string;
 };

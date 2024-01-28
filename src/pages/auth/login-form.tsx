@@ -22,20 +22,23 @@ import {
 import * as z from "zod";
 
 import { useForm } from "react-hook-form";
+
+// rules
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  email: z.string().min(2, {
+    message: "Email must be at least 2 characters.",
   }),
   password: z.string().min(8, {
     message: "Password must be at least 8 characters.",
   }),
 });
 
+// form
 const UserAuthForm: React.FC = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
@@ -45,7 +48,7 @@ const UserAuthForm: React.FC = () => {
   }
   return (
     <>
-      <div className="min-h-screen dark:bg-background bg-slate-100 flex justify-center items-center">
+      <div className="flex items-center justify-center min-h-screen dark:bg-background bg-slate-100">
         <Card className="w-auto">
           <CardHeader>
             <CardTitle>Login</CardTitle>
@@ -61,17 +64,17 @@ const UserAuthForm: React.FC = () => {
               >
                 <FormField
                   control={form.control}
-                  name="username"
+                  name="email"
                   render={({ field }) => (
                     <>
                       <FormItem>
-                        <FormLabel>Username</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
-                            placeholder="Enter your E-mail"
-                            {...field}
+                            placeholder="Enter your email"
                             required
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
@@ -89,9 +92,9 @@ const UserAuthForm: React.FC = () => {
                         <FormControl>
                           <Input
                             type="password"
-                            placeholder="Enter your Password"
-                            {...field}
+                            placeholder="Enter your password"
                             required
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
