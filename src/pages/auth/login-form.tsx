@@ -19,33 +19,24 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import * as z from "zod";
-
 import { useForm } from "react-hook-form";
+import { LoginSchema } from "@/lib/schema";
 
-// rules
-const formSchema = z.object({
-  email: z.string().min(2, {
-    message: "Email must be at least 2 characters.",
-  }),
-  password: z.string().min(8, {
-    message: "Password must be at least 8 characters.",
-  }),
-});
 
-// form
-const UserAuthForm: React.FC = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+const UserLoginForm = () => {
+  
+  const form = useForm<z.infer<typeof LoginSchema>>({
+    resolver: zodResolver(LoginSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof LoginSchema>) {
     console.log(values);
   }
+
   return (
     <>
       <div className="flex items-center justify-center min-h-screen dark:bg-background bg-slate-100">
@@ -66,44 +57,40 @@ const UserAuthForm: React.FC = () => {
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <>
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="Enter your email"
-                            required
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    </>
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="Please enter your email address"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                   )}
                 />
                 <FormField
                   control={form.control}
                   name="password"
                   render={({ field }) => (
-                    <>
-                      <FormItem>
-                        <FormLabel>Password</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="password"
-                            placeholder="Enter your password"
-                            required
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    </>
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="password"
+                          placeholder="Please enter your password"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                   )}
                 />
                 <div className="flex justify-end">
-                  <Button type="submit">Login</Button>
+                  <Button type="submit" disabled={false}>
+                    Login
+                  </Button>
                 </div>
               </form>
             </Form>
@@ -113,4 +100,4 @@ const UserAuthForm: React.FC = () => {
     </>
   );
 };
-export default UserAuthForm;
+export default UserLoginForm;
