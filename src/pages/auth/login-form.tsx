@@ -21,10 +21,9 @@ import {
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { LoginSchema } from "@/lib/schema";
-
+import { fetchLogin } from "@/lib/apis/auth/login";
 
 const UserLoginForm = () => {
-  
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -34,7 +33,14 @@ const UserLoginForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof LoginSchema>) {
-    console.log(values);
+    fetchLogin(values)
+      .then((data) => {
+        const token = data.data.token;
+        localStorage.setItem("token", token);
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
   }
 
   return (

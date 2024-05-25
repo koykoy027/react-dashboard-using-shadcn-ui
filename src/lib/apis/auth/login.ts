@@ -1,6 +1,6 @@
 import axios from '../../helpers/http';
 
-export const fetchLogin = async () => {
-  const response = await axios.get('/login');
+export const fetchLogin = async (formData) => {
+  const response = await axios.post('/login', formData);
   return response.data;
 };
