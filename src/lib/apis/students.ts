@@ -1,4 +1,4 @@
-import axios from '../helpers/http';
+import axios from './axios';
 
 export const fetchStudents = async () => {
   const response = await axios.get('/students');

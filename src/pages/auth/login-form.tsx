@@ -32,14 +32,16 @@ const UserLoginForm = () => {
     },
   });
 
+  // src\pages\auth\login-form.tsx
   function onSubmit(values: z.infer<typeof LoginSchema>) {
+
     fetchLogin(values)
       .then((data) => {
-        const token = data.data.token;
-        localStorage.setItem("token", token);
+        // Handle successful login
+        console.log(data);
       })
       .catch((error) => {
-        console.log(error.response.data);
+        console.log(error);
       });
   }
 
